@@ -12,6 +12,5 @@ for _ in range(3):
     snake.goto(x= start_point, y=0)
     start_point = start_point -20
 
-print(snake.position())
 
 screen.exitonclick()
