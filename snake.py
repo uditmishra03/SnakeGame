@@ -1,20 +1,41 @@
-from turtle import Turtle
+from turtle import Turtle, Screen
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 START_POINT = 0
-MOVE_DISTANCE = 15
+# MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
 
+screen = Screen()
+
 
 class Snake:
 
     def __init__(self):
+        self.chosen_level = None
+        self.move_distance = None
+        # self.chosen_level = 0
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
+
+    def difficulty_level(self):
+        self.chosen_level = screen.textinput(title="Difficulty level",
+                                             prompt="Choose difficulty level.\nFor Easy = 0\nFor Moderate(default) = 1\nFor Difficult = 2 ")
+        if self.chosen_level == "2":
+            self.move_distance = 20
+        elif self.chosen_level == "1":
+            self.move_distance = 17
+        elif self.chosen_level == "0":
+            self.move_distance = 13
+        elif self.chosen_level == "":
+            print("Invalid input, setting to Moderate mode")
+            self.move_distance = 17
+        else:
+            print("Invalid input, setting to Moderate mode")
+            self.move_distance = 17
 
     def create_snake(self):
         for positions in STARTING_POSITIONS:
@@ -35,7 +56,7 @@ class Snake:
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(x=new_x, y=new_y)
-        self.head.forward(MOVE_DISTANCE)
+        self.head.forward(self.move_distance)
 
     def up(self):
         if self.head.heading() != DOWN:

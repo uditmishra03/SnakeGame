@@ -17,6 +17,8 @@ snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
 
+snake.difficulty_level()
+
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")

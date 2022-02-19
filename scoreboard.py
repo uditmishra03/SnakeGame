@@ -1,8 +1,9 @@
 from turtle import Turtle
+from snake import Snake
+
 
 ALIGNMENT = "center"
 FONT = ("Courier", 14, "normal")
-
 
 class Scoreboard(Turtle):
     def __init__(self):
@@ -16,7 +17,7 @@ class Scoreboard(Turtle):
 
     def update_score(self):
         self.clear()
-        self.write(f"Score:{self.current_score} ", align=ALIGNMENT, font=FONT)
+        self.write(f"Score:{self.current_score}", align=ALIGNMENT, font=FONT)
 
     def game_over(self):
         self.goto(0, 0)
