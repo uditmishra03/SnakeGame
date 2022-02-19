@@ -1,9 +1,9 @@
 from turtle import Turtle
 from snake import Snake
 
-
 ALIGNMENT = "center"
 FONT = ("Courier", 14, "normal")
+
 
 class Scoreboard(Turtle):
     def __init__(self):

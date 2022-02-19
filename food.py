@@ -1,7 +1,8 @@
 from turtle import Turtle
 import random
 
-#Food class inherits Turtle class.
+
+# Food class inherits Turtle class.
 class Food(Turtle):
 
     def __init__(self):

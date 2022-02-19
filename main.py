@@ -1,8 +1,5 @@
 import time
 from turtle import Screen
-
-import segment as segment
-
 from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
